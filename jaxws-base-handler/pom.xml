@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jbpm.integration.ws</groupId>
+  <artifactId>jaxws-base-handler</artifactId>
+  <version>1.0.0</version>
+  <name>Jax-WS Base Handler</name>
+  
+  <properties>
+  	<drools.version>6.0.0.CR1</drools.version>
+	<jbpm.version>6.0.0.CR1</jbpm.version>
+  
+  </properties>
+  	<dependencies>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-bpmn2</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow-builder</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-runtime-manager</artifactId>
+			<version>${jbpm.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>weld-spi</artifactId>
+					<groupId>org.jboss.weld</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>weld-api</artifactId>
+					<groupId>org.jboss.weld</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>weld-core</artifactId>
+					<groupId>org.jboss.weld</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+	</dependencies>
+</project>
