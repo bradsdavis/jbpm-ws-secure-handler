@@ -48,7 +48,7 @@ public class HelloWorldServiceV1WorkItemHandler extends AbstractJaxWSWorkItemHan
 	 */
 	@Override
 	protected void enhanceRequestContext(WorkItem workItem, Map<String, Object> requestContext) {
-		requestContext.put(BindingProvider.USERNAME_PROPERTY, "brad");
-		requestContext.put(BindingProvider.PASSWORD_PROPERTY, "davis");
+		requestContext.put(BindingProvider.USERNAME_PROPERTY, "admin");
+		requestContext.put(BindingProvider.PASSWORD_PROPERTY, "admin");
 	}
 }
