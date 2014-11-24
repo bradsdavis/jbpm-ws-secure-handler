@@ -1,13 +1,13 @@
-Build and deploy example-ws-secure to a clean server.
+* Build and deploy example-ws-secure to a clean server.
 	* This should create the Web Service registered at: 
 		* http://localhost:8080/example-ws-secure/HelloWorldServiceImplV1?wsdl 
 	* The web service requires the HTTP Header AuthorizationPolicy, with username: admin and password: admin
 	* The web service will result in a 401 UNAUTHORIZED result when the username and password aren't provided.
 
-Build and Maven install: jaxws-base-handler
+* Build and Maven install: jaxws-base-handler
 	* This project contains an abstract Work Item Handler that can be extended for Web Service / Secure Web Service Invocations.
 
-Build and Maven Install: example-ws-secure-client
+* Build and Maven Install: example-ws-secure-client
 	* This project provides an example of leveraging jaxws-base-handler to execute Web Service / Secure Web Service Invocations.
 	* This project's classes were generaged by the CXF Plugin that is commented out in the pom.xml.  
 		* This can be leveraged as an example for creating Web Service Clients from WSDL files.
