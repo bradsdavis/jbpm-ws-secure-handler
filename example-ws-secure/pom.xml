@@ -1,64 +1,71 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.jbpm.example</groupId>
-  <artifactId>example-ws-secure</artifactId>
-  <version>1.0.0</version>
-  <packaging>war</packaging>
-  
-  <properties>
-  	<version.cxf>2.7.11</version.cxf>
-  	<version.slf4j>1.7.7</version.slf4j>
-  </properties>
-  
-  <dependencies>
-  			<!-- apache cxf -->
-  			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-bindings-soap</artifactId>
-				<version>${version.cxf}</version>
-				<scope>provided</scope>
-  			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http</artifactId>
-				<version>${version.cxf}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-rs-extension-providers</artifactId>
-				<version>${version.cxf}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http-jetty</artifactId>
-				<version>${version.cxf}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${version.slf4j}</version>
-				<scope>provided</scope>
-			</dependency>
-  </dependencies>
-  
-  <build>
-  	<plugins>
-  		<plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-war-plugin</artifactId>
-           <version>2.5</version>
-           <configuration>
-              <archive>
-                 <manifestEntries>
-                    <Dependencies>org.slf4j, org.apache.cxf, org.jboss.ws.cxf.jbossws-cxf-client</Dependencies>
-                 </manifestEntries>  
-              </archive>
-           </configuration>
-         </plugin>   
-  	</plugins>
-  
-  </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jbpm.example</groupId>
+	<artifactId>example-ws-secure</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<version.cxf>2.7.11</version.cxf>
+		<version.slf4j>1.7.7</version.slf4j>
+	</properties>
+
+	<dependencies>
+		<!-- apache cxf -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-bindings-soap</artifactId>
+			<version>${version.cxf}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${version.cxf}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${version.cxf}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${version.cxf}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${version.slf4j}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.ws.native</groupId>
+			<artifactId>jbossws-native-core</artifactId>
+			<version>4.1.1.Final</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.slf4j, org.apache.cxf.impl, org.apache.ws.security, org.jboss.ws.cxf.jbossws-cxf-client, org.jboss.ws.cxf.jbossws-cxf-server</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
 </project>

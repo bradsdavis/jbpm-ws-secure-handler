@@ -8,6 +8,6 @@ import javax.jws.WebService;
 public interface HelloWorldService {
 
 	@WebMethod
-	String sayHello(@WebParam(name="name") String firstName, String lastName);
+	String sayHello(@WebParam(name="firstName") String firstName, @WebParam(name="lastName") String lastName);
  
 }

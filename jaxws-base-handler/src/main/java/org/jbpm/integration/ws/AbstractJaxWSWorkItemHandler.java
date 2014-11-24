@@ -7,6 +7,8 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
 
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.frontend.ClientProxy;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
@@ -61,9 +63,10 @@ public abstract class AbstractJaxWSWorkItemHandler<T> implements WorkItemHandler
 				LOG.info("Reflecting Type to: "+getClientType());
 				
 				client = (T)service.getPort(getClientType());
-
+				
 				BindingProvider bindingProvider = ((BindingProvider)client); 
 				enhanceBindingProvider(workItem, bindingProvider);
+				enhanceClientProxy(workItem, bindingProvider, ClientProxy.getClient(client));
 				enhanceRequestContext(workItem, bindingProvider.getRequestContext());
 				enhanceResponseContext(workItem, bindingProvider.getResponseContext());
 				
@@ -116,6 +119,7 @@ public abstract class AbstractJaxWSWorkItemHandler<T> implements WorkItemHandler
 	 */
 	protected void enhanceBindingProvider(WorkItem workItem, BindingProvider bindingProvider) {}
 	
+	protected void enhanceClientProxy(WorkItem workItem, BindingProvider bindingProvider, Client client) {}
 
 	/**
 	 * Used to add request context information prior to executing the web service call.
